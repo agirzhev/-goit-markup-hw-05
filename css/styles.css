@@ -88,6 +88,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--link-text-color);
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-list-link:hover,
@@ -124,6 +125,8 @@ body {
   letter-spacing: 0.02em;
   color: var(--primery-text-color);
   text-decoration: none;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* .site-nav-item {
@@ -170,6 +173,8 @@ body {
   height: 12px;
   margin-right: 10px;
   fill: currentColor;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-email:hover,
@@ -182,6 +187,8 @@ body {
   height: 16px;
   margin-right: 10px;
   fill: currentColor;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-phone:hover,
@@ -443,6 +450,9 @@ body {
   align-items: center;
   color: var(--border-first-color);
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-social-link:hover,
@@ -478,6 +488,9 @@ body {
   display: inline-flex;
   width: 170px;
   height: 92px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    cursor 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .partners-list-item:not(:first-child) {
   margin-left: 30px;
@@ -502,6 +515,8 @@ body {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), cursor 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .partners-link:hover,
@@ -514,6 +529,8 @@ body {
   fill: currentColor;
   width: 106px;
   height: 60px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), cursor 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .partners-logo:hover,
@@ -651,6 +668,9 @@ body {
   color: var(--border-first-color);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .conect-social-link:hover,
@@ -692,6 +712,10 @@ body {
 .filters-item {
   margin-left: 8px;
   height: 38px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), cursor 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filters-item-fist {
@@ -722,6 +746,9 @@ body {
   height: 404px;
   background: var(--primery-background-color);
   border: 1px solid var(--line-second-color);
+
+  transition: cursor 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-item:nth-child(3n + 1) {
@@ -739,33 +766,41 @@ body {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-/* .portfolio-foto {
+.portfolio-item-web {
   position: relative;
-} */
+  overflow: hidden;
+}
 
-.portfolio-item-web::before {
-  /* display: inline-block; */
-  content: 'Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.';
+.portfolio-item-overley {
+  display: block;
+  margin: 0;
   position: absolute;
-  padding: 63px 24px;
   top: 0;
-  width: 370px;
-  height: 294px;
+  left: 0;
+  padding: 63px 24px;
+  width: 100%;
+  height: 100%;
   font-weight: normal;
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
   text-align: start;
-  opacity: 0;
+
   color: var(--primery-background-color);
   background: rgba(33, 150, 243, 0.9);
-  transition-duration: 1000ms;
+
+  transform: translateY(100%);
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-item-web:hover::before {
-  opacity: 1;
-  transition-duration: 1000ms;
+.portfolio-item:hover .portfolio-item-overley {
+  transform: translateY(0);
 }
+
+/* .portfolio-item-web:hover {
+  opacity: 1;
+} */
 
 .portfolio-title {
   margin: 0;
